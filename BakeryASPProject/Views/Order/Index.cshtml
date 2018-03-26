@@ -1,0 +1,27 @@
+@model IEnumerable<BakeryASP.Models.Menu>
+@model BakeryASP.Models.Menu
+@model BakeryASP.Models.Order
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Look through our delicious menu!</h2>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.ProductKey)</th>
+        <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+        <th>@Html.DisplayNameFor(model => model.ProductPrice)</th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => i.ProductKey)</td>
+            <td>@Html.DisplayFor(modelItem => i.ProductName)</td>
+            <td>@Html.DisplayFor(modelItem => i.ProductPrice)</td>
+        </tr>
+    }
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
