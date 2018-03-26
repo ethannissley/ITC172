@@ -1,0 +1,26 @@
+@model  IEnumerable<BakeryASP.Models.Product>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Our Products</h2>
+
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+           
+        </tr>
+    }
+
+</table>
